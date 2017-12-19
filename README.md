@@ -29,7 +29,7 @@ Glossaire PHP
 |**\$_POST**|Tableau associatif passé au script par la méthode POST (voir **\$_GET**)|
 |**\$_REQUEST**|Un tableau associatif qui contient par défaut le contenu des variables \$_GET, \$_POST et \$_COOKIE. |
 |**\$_SERVER**|Tableau associatif des informations du serveur **(à préciser)**|
-|**\$_SESSION**|Tableau associatif des valeurs stockées dans les sessions **(à préciser)**|
+|**\$_SESSION**|Tableau associatif des valeurs stockées dans la session. La session s'ouvre dès l'entrée sur le site du visiteur, et se ferme dès sa sortie, au bout d'un temps d'inactivité (timeout) ou la déconnexion via session_destroy(). \$_SESSION nécessite l'appel de la fonction **start_session**() **AVANT TOUT CODE HTML ET SUR CHAQUE PAGE L'UTILISANT** pour pouvoir être utilisé|
 |**\$_COOKIE**|Un tableau associatif de variables, passé au script courant, via des cookies HTTP. |
 |**include**(\$string)|Inclut au script actuel le fichier spécifié par le chemin \$string. (exemple un autre script php)|
 |**require**(\$string)|Comportement analogue à include() mais renvoie une erreur fatale (et donc arrête le script) si l'inclusion renvoie une erreur (include n'émet qu'une alerte **E_WARNING** le cas échéant|

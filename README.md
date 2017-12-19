@@ -23,7 +23,7 @@ Glossaire PHP
 |**hmlspecialchars**(\$string)|convertit les caractères spéciaux dde \$string en entités HTML|
 |**urlencode**(\$string)| renvoie une version encodée de \$string insérable dans une URL (plus d'espace, etc)|
 |**isset**(\$var[,\$var2 ...])|renvoie TRUE si toutes les variables passées en paramètres sont définies et différentes de NULL|
-|**empty**(\$var)| renvoie TRUE si \$var est définie et non vide|
+|**empty**(\$var)| renvoie FALSE si \$var est définie et non vide|
 |**\$_GET**|Tableau associatif (clé => valeur) passé par l'URL (méthode GET). exemple:|
 |`echo htmlspecialchars($_GET["name"]);`|renvoie `Geraud` si l'URL était `http://example.com/?name=Geraud`|
 |**\$_POST**|Tableau associatif passé au script par la méthode POST (voir **\$_GET**)|

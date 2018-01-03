@@ -95,4 +95,5 @@ Glossaire SQL
 |**FLOAT**|Nombre à virgule flottante, de scale 23|
 |**DOUBLE**| |
 
-![Schéma de l'architecture d'un site](/pictures/architectureSite.png)
+![Schéma de l'architecture d'un site](/pictures/architectureSite.png "Schéma d'architecture d'un site Web")
+![Schéma de fonctionnement de mySQL](/pictures/schemeMySQL.png "Schéma de fonctionnement de mySQL") 

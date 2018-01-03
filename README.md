@@ -62,6 +62,7 @@ Glossaire SQL
 |**SGBD**|Système de Gestion de Base de Données|
 |**Moteur SQL**|Programme qui manipule les fichiers de la BDD, et retranscrit les informations stockées de manière "lisible" |
 |**Catalogue**|Description de la BDD ++ informations "subsidiaires" (typiquement les droits d'accès à la base de données)|
+|**Requête**|Demande envoyée à la BDD, qui va renvoyer|
 |**Langage de requête**|Langage informatique dans lequel sera codé les requêtes envoyés au SGBD|
 |**Processeur de requête**|Programme d'interprétation de la requête|
 |**Plan d'éxécution**|Liste des opérations à réaliser sur la BDD. pour une requête écrite dans le langage de requête, le processeur de requête détermine un plan d'éxécution. Après avoir vérifier que toutes les opérations nécessaires au plan d'éxécution sont autorisées à l'utilisateur (vérification dans le catalogue), le plan est envoyé au moteur SQL, qui renvoie le résultat de la requête|
@@ -91,5 +92,7 @@ Glossaire SQL
 |**BIGINT**|Entier encodé sur 8 octet (0-2^64 non signé ou -2^63-2^63-1 signé)|
 |--|--|
 |**DECIMAL**/**NUMERIC**(p,s)|définition d'une variable réelle de précision (nombre de chiffres) p et de scale (nombre de chiffres après la virgule) s. max p = 65, max s = 30|
+|**FLOAT**|Nombre à virgule flottante, de scale 23|
+|**DOUBLE**| |
 
-
+![Schéma de l'architecture d'un site](/pictures/architectureSite.png)

@@ -73,24 +73,29 @@ Glossaire SQL
 |**DROP**|mot-clé pour supprimer un élément|
 |**Collation**|Table de conversion des caractères spéciaux, par exemple pour les tris|
 |**COLLATE**|mot-clé définissant la collation à utiliser pour la table. ex. **COLLATE utf8_general_ci;**|
-|--|--|
+|--------------------|-------------------|
 |**Langage de manipulation de données (LMD/DML)**|Requête, tri, filtre etc|
 |--|--|
+|**INSERT**|Insertion (création) de données dans une table|
+|**SELECT**|Sélection (lecture) de données dans une table|
+|**UPDATE**|Mise à jour (réécriture) de données dans une table|
+|**DELETE**|Suppression de données dans une table|
+|-------------------|--------------------------|
 |**Langage de contrôle de données (LCD)**|Vérification des droits|
-|--|--|
+|---------------|---------------------------|
 |**Langage de contrôle des transactions(LCT/TCL)**||
-|--|--|
+|----------------------------|---------------------|
 
 /!\ Les colonnes en SQL sont typées et dépendent du SGBD/!\
 
 | Notions SQL | Définition |
-|--|--|
+|---------------|---------------------|
 |**TINYINT**|Entier encodé sur 1 octet (0-255 non signé ou -128-127 signé)|
 |**SMALLINT**|Entier encodé sur 2 octet (0-2^16 non signé ou -2^15-2^15-1 signé)|
 |**MEDIUMINT**|Entier encodé sur 3 octet (0-2^24 non signé ou 2^23-2^23-1 signé)|
 |**INT**|Entier encodé sur 4 octet (0-2^32 non signé ou -2^31-2^31-1 signé)|
 |**BIGINT**|Entier encodé sur 8 octet (0-2^64 non signé ou -2^63-2^63-1 signé)|
-|--|--|
+|---------------------------|---------------------|
 |**DECIMAL**/**NUMERIC**(p,s)|définition d'une variable réelle de précision (nombre de chiffres) p et de scale (nombre de chiffres après la virgule) s. max p = 65, max s = 30|
 |**FLOAT**|Nombre à virgule flottante, de scale 23|
 |**DOUBLE**| |

@@ -1,3 +1,5 @@
+|Demande             |Requête SQL               |
+|--------------------|--------------------------|
 |Liste des boissons :| SELECT name FROM boissons;|
 
 |Liste des ingrédients en manque (dont la quantité est nulle):| SELECT name FROM ingredients WHERE stock != 0;|

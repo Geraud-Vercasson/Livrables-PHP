@@ -1,9 +1,7 @@
 |Demande             |Requête SQL               |
 |--------------------|--------------------------|
 |Liste des boissons :| SELECT name FROM boissons;|
-
 |Liste des ingrédients en manque (dont la quantité est nulle):| SELECT name FROM ingredients WHERE stock != 0;|
-
 |Liste des boissons dont le libellé contient le mot « café »:|SELECT name FROM boissons WHERE name LIKE '%café%';|
 |Liste des boissons dont le prix est entre 0.40 et 0.70 euros:|SELECT name FROM boissons WHERE prix >= 40 AND prix <= 70;|
 |Liste des ventes d’aujourd’hui classées par n° décroissant:||

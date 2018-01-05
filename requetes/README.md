@@ -6,7 +6,7 @@
 |Liste des boissons dont le prix est entre 0.40 et 0.70 euros:|SELECT name <br>FROM boissons <br>WHERE prix >= 40 AND prix <= 70;|
 |Liste des ventes d’aujourd’hui classées par n° décroissant:|SELECT *<br>FROM commande<br>WHERE DATE(date) = DATE(NOW())<br>ORDER BY id  DESC;|
 |Liste des ingrédients (nom et qte nécesssaire) d’une boisson donnée:|SELECT ingredients.name AS 'ingrédient', recette.quantite <br>FROM ingredients<br> JOIN recette <br>ON ingredients.id = recette.ingredients_id <br>WHERE recette.boissons_id = 2|
-|Liste des boissons disponibles (pour lesquelles les ingrédients sont dispo):||
+|Liste des boissons disponibles (pour lesquelles les ingrédients sont dispo):|SELECT boissons.name <br>FROM recette <br>JOIN ingredients <br>ON ingredients.id = recette.ingredients_id <br>JOIN boissons <br>ON boissons.id = recette.boissons_id <br>GROUP BY boissons.id <br>HAVING MIN(recette.quantite <= ingredients.stock) != 0 |
 |Liste des boissons vendues aujourd’hui:|SELECT boissons.name <br> FROM commande <br> INNER JOIN boissons <br> WHERE commande.boissons_id = boissons.id <br> AND DATE(NOW()) = DATE(commande.date)|
 |Prix de la derniere boisson vendue:|SELECT boissons.prix<br> FROM boissons, commande <br>WHERE commande.boissons_id = boissons.id <br>ORDER BY commande.date DESC LIMIT 1 |
 |Nombre de ventes de la boisson « Café »:|SELECT COUNT(*)<br> FROM boissons, commande<br> WHERE commande.boissons_id = boissons.id <br>AND boissons.name = "café" |

@@ -63,7 +63,7 @@ De la même manière on peut définir un attribut statique, toujours avec le mot
 
 ## mot-clé `$this`
 
-Pour accéder à l'attribut $nom de l'objet $geraudde classe Person, on écrit `$geraud->nom`. Mais comment accéder à cet attribut depuis l'intérieur de l'objet?
+Pour accéder à l'attribut $nom de l'objet $geraud de la classe Person, on écrit `$geraud->nom`. Mais comment accéder à cet attribut depuis l'intérieur de l'objet?
 
 Le mot-clé `$this` permet de faire référence à l'instance dans laquelle nous nous trouvons. Ainsi, depuis l'intérieur de l'objet $geraud, on peut accéder à l'attribut $nom par la ligne : `$this->nom`.
 

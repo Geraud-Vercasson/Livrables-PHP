@@ -28,7 +28,12 @@ Analogie de la voiture : pour démarrer une voiture, le conducteur a juste à to
 
 La visibilité, d'un attribut ou d'une méthode, c'est la zone depuis laquelle on peut accéder à cet attribut, cette méthode. La visibilité  `public` permet d'appeler l'attribut ou la méthode depuis l'extérieur de l'objet / de la classe. à l'inverse la visibilité `private` rend inaccessible depuis l'extérieure de la classe / l'objet l'attribut ou la méthode concernée. Enfin, la visibilité `protected` permet d'appeler l'attribut ou la méthode concernée depuis la classe et toutes les classes héritées de celle-ci, tout en restant inaccessible depuis "l'extérieur". (voir Héritage)
 
-Analogie : Prénom et Numéro de compte. En imaginant une personne comme étant un objet (ou une classe de manière générique), on pourrait définir son Prénom comme attribut public, car tout le monde à le droit de le connaître. Son numéro de compte par contre, ne doit être connu que de lui, sans quoi il risque de se voir modifier cet attribut (en se faisant vider son compte par exemple). Une méthode publique créditerCompte pourrait permettre de créditer automatiquement le compte de cette personne, en utilisant son numéro de compte. le numéro n'est pas accessible depuis l'extérieur, mais des méthodes publiques de cette classe / cet objet peuvent y accéder (ce qui rejoint le concept d'encapsulation)
+Analogie : Prénom et Numéro de compte. En imaginant une personne comme étant un objet (ou une classe de manière générique), on pourrait définir son Prénom comme attribut public, car tout le monde à le droit de le connaître.
+
+Son numéro de compte par contre, ne doit être connu que de lui, sans quoi il risque de se voir modifier cet attribut (en se faisant vider son compte par exemple).
+Une méthode publique créditerCompte pourrait permettre de créditer automatiquement le compte de cette personne, en utilisant son numéro de compte.
+
+le numéro n'est pas accessible depuis l'extérieur, mais des méthodes publiques de cette classe / cet objet peuvent y accéder (ce qui rejoint le concept d'encapsulation)
 
 
 ## Getter / Accesseur :

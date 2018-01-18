@@ -17,7 +17,6 @@ Une instance d'une classe est un objet créée à partir de la classe. Ce n'est 
 
 `->` est un opérateur utilisé pour atteindre une méthode ou un attribut d'un objet. Par exemple pour appeler la méthode bonjour() de l'objet $geraud, on écrit `$geraud->bonjour()`.
 
-
 ## Encapsulation :
 
 Principe en informatique de créer des outils qui se comporteront en "boîte noire" : l'utilisateur n'aura ni à connaitre, ni à toucher au code à l'intérieur de cette "boîte" pour pouvoir utiliser cet outil (fonction, objet, classe, ou autre). 
@@ -62,4 +61,20 @@ Dans notre exemple, l'appel de la méthode statique bonjour() se fera en écriva
 
 De la même manière on peut définir un attribut statique, toujours avec le mot-clé `static`. Un attribut ainsi déclaré ne sera donc pas lié à une instance particulière, mais bien à la classe toute entière, indépendamment de ses instances.
 
+## mot-clé `$this`
 
+Pour accéder à l'attribut $nom de l'objet $geraudde classe Person, on écrit `$geraud->nom`. Mais comment accéder à cet attribut depuis l'intérieur de l'objet?
+
+Le mot-clé `$this` permet de faire référence à l'instance dans laquelle nous nous trouvons. Ainsi, depuis l'intérieur de l'objet $geraud, on peut accéder à l'attribut $nom par la ligne : `$this->nom`.
+
+Ce mot-clé est très important dans les définitions de classe, car c'est avec `$this` que l'on fait référence à l'instance "que l'on manipule en ce moment". par exemple une méthode `direMonNom()` créée dans la classe Person, accèdera à l'attribut $nom par `$this->nom`.
+
+**Attention !** L'attribut $nom, dans notre exemple, n'est pas un attribut statique : en effet, toutes les instances de la class Person n'auront pas (forcément) le même attribut $nom. Pour atteindre des propriétés statiques depuis l'intérieur de la classe, il faut utiliser :
+
+## mot-clé `self`
+
+Le mot-clé `self` permet de faire référence, depuis l'intérieur de la classe (ou d'une instance de cette classe) à une propriété statique inhérente à cette classe. `self` fait donc référence à la classe elle-même.
+
+Exemple : en reprenant notre méthode statique bonjour() de la classe Person, nous pouvons l'appeler, depuis l'extérieur de la classe, par la ligne `Person::bonjour()`.
+
+Pour l'appeler depuis l'intérieur de la classe, on écrit : `self::bonjour()`.

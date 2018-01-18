@@ -13,10 +13,15 @@ Ensemble d'attributs et de méthodes permettant de définir la structure, le "pl
 
 Une instance d'une classe est un objet créée à partir de la classe. Ce n'est pas une structure (classe seule), mais un objet défini selon les règles de construction et d'utilisation de cette classe. L'instanciation d'une classe est donc la création d'une instance de cette classe. En PHP, pour instancier une classe, on utilise le mot-clé `new` : `$monObjet = new MyClass()` => la variable $monObjet est une instance de la classe MyClass 
 
+mot-clé `->` :
+
+	`->` est un opérateur utilisé pour atteindre une méthode ou un attribut d'un objet. Par exemple pour appeler la méthode bonjour() de l'objet $geraud, on écrit `$geraud->bonjour()`.
+
 
 ## Encapsulation :
 
 Principe en informatique de créer des outils qui se comporteront en "boîte noire" : l'utilisateur n'aura ni à connaitre, ni à toucher au code à l'intérieur de cette "boîte" pour pouvoir utiliser cet outil (fonction, objet, classe, ou autre). 
+
 Analogie de la voiture : pour démarrer une voiture, le conducteur a juste à tourner la clé (voire moins). Il n'a pas besoin de voir ou de comprendre le mécanisme qui, une fois la clé tournée, démarre la voiture : les concepts de bougie d'allumage, d'injection etc sont inutiles (et donc "cachés") à l'utilisateur.
 
 
@@ -51,8 +56,10 @@ Lorsque l'on veut empêcher l'override d'une méthode dans les classes héritée
 ## mot-clé : `static`
 
 Par défaut, une méthode ou un attribut "seul" n'as pas forcément de sens : imaginons une class Person avec un attribut nom. La notion de nom pour une personne "générique" n'a pas de sens; ce n'est que lorsqu'on instancie (crée un objet) de la class Person (exemple moi) que l'on peut définir l'attribut nom (exemple Géraud).
-Néanmoins, il est parfois utile de pouvoir appeler un attribut ou une méthode d'une classe sans pour autant l'instancier : par exemple une Person, sans qu'elle soit définie, peut quand même dire "bonjour". On appelle alors la méthode bonjour() de la classe Person avec l'opérateur ::. Ceci n'est possible que si la méthode (ou l'attribut) concernée a été déclarée avec le mot-clé `static`
+Néanmoins, il est parfois utile de pouvoir appeler un attribut ou une méthode d'une classe sans pour autant l'instancier : par exemple une Person, sans qu'elle soit définie, peut quand même dire "bonjour". On appelle alors la méthode bonjour() de la classe Person avec l'opérateur `::`(apellé opérateur de résolution de portée) . Ceci n'est possible que si la méthode (ou l'attribut) concernée a été déclarée avec le mot-clé `static`
 
 Dans notre exemple, l'appel de la méthode statique bonjour() se fera en écrivant `Person::bonjour()`.
+
+De la même manière on peut définir un attribut statique, toujours avec le mot-clé `statique`. Un attribut ainsi déclaré ne sera donc pas lié à une instance particulière, mais bien à la classe toute entière, indépendamment de ses instances.
 
 

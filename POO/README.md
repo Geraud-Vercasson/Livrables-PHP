@@ -60,6 +60,6 @@ Néanmoins, il est parfois utile de pouvoir appeler un attribut ou une méthode 
 
 Dans notre exemple, l'appel de la méthode statique bonjour() se fera en écrivant `Person::bonjour()`.
 
-De la même manière on peut définir un attribut statique, toujours avec le mot-clé `statique`. Un attribut ainsi déclaré ne sera donc pas lié à une instance particulière, mais bien à la classe toute entière, indépendamment de ses instances.
+De la même manière on peut définir un attribut statique, toujours avec le mot-clé `static`. Un attribut ainsi déclaré ne sera donc pas lié à une instance particulière, mais bien à la classe toute entière, indépendamment de ses instances.
 
 

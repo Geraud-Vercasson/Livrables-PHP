@@ -13,9 +13,9 @@ Ensemble d'attributs et de méthodes permettant de définir la structure, le "pl
 
 Une instance d'une classe est un objet créée à partir de la classe. Ce n'est pas une structure (classe seule), mais un objet défini selon les règles de construction et d'utilisation de cette classe. L'instanciation d'une classe est donc la création d'une instance de cette classe. En PHP, pour instancier une classe, on utilise le mot-clé `new` : `$monObjet = new MyClass()` => la variable $monObjet est une instance de la classe MyClass 
 
-mot-clé `->` :
+## mot-clé `->` :
 
-	`->` est un opérateur utilisé pour atteindre une méthode ou un attribut d'un objet. Par exemple pour appeler la méthode bonjour() de l'objet $geraud, on écrit `$geraud->bonjour()`.
+`->` est un opérateur utilisé pour atteindre une méthode ou un attribut d'un objet. Par exemple pour appeler la méthode bonjour() de l'objet $geraud, on écrit `$geraud->bonjour()`.
 
 
 ## Encapsulation :

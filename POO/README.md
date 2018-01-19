@@ -37,7 +37,7 @@ le numéro n'est pas accessible depuis l'extérieur, mais des méthodes publique
 
 ## Constructeur :
 
-Le constructeur d'une classe est une méthode qui sera appelée automatiquement à l'instanciation de cette classe. Il peut prendre autant d'argument que l'on souhaite, et est (en PHP) toujours nommée __construct.
+Le constructeur d'une classe est la méthode qui sera appellée automatiquement à l'instanciation de cette classe. Il peut prendre autant d'argument que l'on souhaite, et est (en PHP) toujours nommé __construct.
 
 Cette méthode permet, par exemple, d'initialiser les variables de l'instance, d'informer l'utilisateur de la création d'objet, etc.
 
@@ -57,6 +57,14 @@ Exemple:
 	$moi = new Person('Géraud');
 
 A noter : lors de l'instanciation, nous n'avons pas fait appel directement au constructeur, mais `new NomDeLaClasse(argumentsDuConstructeur)`. PHP reconnait cette syntaxe et à ce moment appelle le constructeur avec les arguments ainsi passés
+
+## Destructeur :
+
+Le destructeur est la méthode de la classe qui sera appellée automatiquement à la destruction de l'instance. Cela se fait automatiquement dès qu'il n'y a plus de référence dans le code à l'instance concernée, lorsqu'on détruit explicitement l'instance.
+
+Le destructeur en PHP est toujours nommé __destruct, et n'a jamais d'argument : en effet la façon de détruire une instance (contrairement au moment de le faire) ne dépend d'aucun paramètre.
+
+Le destructeur peut servir, par exemple, à informer l'utilisateur de la destruction de l'instance, ou à sauvegarder les données de l'objet dans une base de données, ou tout autre action que l'on veut éxecuter avant la disparition de l'objet.
 
 ## Getter / Accesseur :
 

@@ -13,7 +13,7 @@ Ensemble d'attributs et de méthodes permettant de définir la structure, le "pl
 
 Une instance d'une classe est un objet créée à partir de la classe. Ce n'est pas une structure (classe seule), mais un objet défini selon les règles de construction et d'utilisation de cette classe. L'instanciation d'une classe est donc la création d'une instance de cette classe. En PHP, pour instancier une classe, on utilise le mot-clé `new` : `$monObjet = new MyClass()` => la variable $monObjet est une instance de la classe MyClass 
 
-## mot-clé `->` :
+## opérateur `->` :
 
 `->` est un opérateur utilisé pour atteindre une méthode ou un attribut d'un objet. Par exemple pour appeler la méthode bonjour() de l'objet $geraud, on écrit `$geraud->bonjour()`.
 
@@ -35,6 +35,27 @@ Une méthode publique créditerCompte pourrait permettre de créditer automatiqu
 
 le numéro n'est pas accessible depuis l'extérieur, mais des méthodes publiques de cette classe / cet objet peuvent y accéder (ce qui rejoint le concept d'encapsulation)
 
+## Constructeur :
+
+Le constructeur d'une classe est une méthode qui sera appelée automatiquement à l'instanciation de cette classe. Il peut prendre autant d'argument que l'on souhaite, et est (en PHP) toujours nommée __construct.
+
+Cette méthode permet, par exemple, d'initialiser les variables de l'instance, d'informer l'utilisateur de la création d'objet, etc.
+
+Exemple:
+	//Définition de la class
+	class Person {
+	//Définition de ses attributs
+	public $nom
+	//Définition du constructeur
+	public function __construct($nouveauNom){
+		$this->nom = $nouveauNom;
+		}
+	}
+	
+	//Création de l'instance :
+	$moi = new Person('Géraud');
+
+A noter : lors de l'instanciation, nous n'avons pas fait appel directement au constructeur, mais `new NomDeLaClasse(argumentsDuConstructeur)`. PHP reconnait cette syntaxe et à ce moment appelle le constructeur avec les arguments ainsi passés
 
 ## Getter / Accesseur :
 
@@ -49,13 +70,15 @@ De la même manière qu'un Getter permet de récupérer la valeur d'un attribut,
 L'héritage est un concept de lien de parenté entre deux classes : une classe mère (parent) et une classe fille. Ce lien est défini lors de la déclaration de la classe fille, en PHP, via le mot-clé `extends`. Une classe fille "hérite" des attributs et des méthodes de sa classe mère : une méthode définie dans la classe mère est utilisable dans sa classe fille, et aura par défaut le même comportement.
 
 
-## Override :
+## Override / Surcharge :
 
 Une méthode héritée d'une classe mère peut être redéfinie pour avoir un comportement différent dans une classe fille. Ainsi, une méthode portant le même nom peut avoir un comportement différent en fonction de la classe (ou l'instance de la classe) depuis laquelle elle est apellée.
 
 ## mot-clé : `final`
 	
 Lorsque l'on veut empêcher l'override d'une méthode dans les classes héritées d'une classe mère, il faut utiliser le mot-clé `final` dans la déclaration de cette méthode, dans la classe mère. Ce mot clé permet de rendre"finale" la ou les méthodes concernées, et que par définition elle ne peut pas se comporter autrement dans les classes héritées.
+
+`final` peut également être utilisées
 
 ## mot-clé : `static`
 
@@ -83,3 +106,19 @@ Le mot-clé `self` permet de faire référence, depuis l'intérieur de la classe
 Exemple : en reprenant notre méthode statique bonjour() de la classe Person, nous pouvons l'appeler, depuis l'extérieur de la classe, par la ligne `Person::bonjour()`.
 
 Pour l'appeler depuis l'intérieur de la classe, on écrit : `self::bonjour()`.
+
+## mot-clé `parent`
+
+Comme évoqué plus haut, l'opérateur `::`, appelé opérateur de résolution de portée, permet d'appeler une méthode ou un attribut directement depuis la classe concernée.
+
+Outre les utilisations vues plus haut, comme l'appel à des propriétés statiques ou associé avec le mot-clé `self`, une idée importante concerne l'héritage et plus particulièrement la surchage (overriding) de méthode. En effet, si une méthode issue d'une classe mère et surchargée dans une classe fille, cette classe pourra quand-même faire référence à la méthode de la classe mère.
+
+Ceci se fait par l'utilisation du mot-clé `parent`. Avec le mot-clé `parent`, nous pouvons appelé depuis une classe fille une méthode telle qu'elle est définie dans la classe mère, indépendamment de la surchage ou non dans la classe fille.
+
+Exemple d'utilisation 'courante' : le constructeur d'une classe fille.
+
+Lorsque l'on définit le constructeur d'une classe fille, on surcharge la méthode héritée de la classe mère. Hors, la construction d'un objet d'une classe fille commence (souvent) par refaire exactement les mêmes affectations, les mêmes opérations définies dans le constructeur de la classe mère. Dans ce cas, plutôt que de réécrire un morceau de code, il est plus judicieux d'appeler le constructeur de la classe mère dans la classe fille. Cela s'écrit :
+
+	public function __construct([argumentsClasseFille]) {
+		parent::__construct([argumentsClasseMère]);
+	}

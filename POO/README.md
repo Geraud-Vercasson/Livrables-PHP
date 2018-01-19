@@ -42,6 +42,7 @@ Le constructeur d'une classe est une méthode qui sera appelée automatiquement 
 Cette méthode permet, par exemple, d'initialiser les variables de l'instance, d'informer l'utilisateur de la création d'objet, etc.
 
 Exemple:
+
 	//Définition de la class
 	class Person {
 	//Définition de ses attributs

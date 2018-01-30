@@ -87,7 +87,7 @@ Une méthode héritée d'une classe mère peut être redéfinie pour avoir un co
 	
 Lorsque l'on veut empêcher l'override d'une méthode dans les classes héritées d'une classe mère, il faut utiliser le mot-clé `final` dans la déclaration de cette méthode, dans la classe mère. Ce mot clé permet de rendre"finale" la ou les méthodes concernées, et que par définition elle ne peut pas se comporter autrement dans les classes héritées.
 
-`final` peut également être utilisées
+`final` peut également être utilisé sur une classe, interdisant ainsi qu'on puisse l'étendre
 
 ## mot-clé : `static`
 
